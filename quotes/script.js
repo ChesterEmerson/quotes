@@ -1,4 +1,4 @@
-const reviews = [
+const quotes = [
     {
       id: 1,
       name: 'Nelson Mandela',
@@ -63,20 +63,20 @@ const reviews = [
   let currentItem = 0;
 
   window.addEventListener('DOMContentLoaded', function () {
-      const item = reviews[currentItem];
+      const item = quotes[currentItem];
       author.textContent = item.name;
       quote.textContent = item.text;
   });
 
   function showPerson(person){
-    const item = reviews[person];
+    const item = quotes[person];
     author.textContent = item.name;
     quote.textContent = item.text;
   }
  // show next and preview
   prev.addEventListener('click', function() {
      currentItem++;
-     if (currentItem > reviews.length -1){
+     if (currentItem > quotes.length -1){
         currentItem = 0;
      }
      showPerson(currentItem);
@@ -85,7 +85,7 @@ const reviews = [
   next.addEventListener('click', function() {
     currentItem--;
     if (currentItem < 0) {
-        currentItem = reviews.length - 1;
+        currentItem = quotes.length - 1;
     }
     showPerson(currentItem);
   });
